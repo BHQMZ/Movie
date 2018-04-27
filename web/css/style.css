@@ -1,0 +1,466 @@
+
+/********************************************************/
+/*                       1. Global                      */
+/********************************************************/
+
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
+	background: white;
+}
+body, button, input, textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 16px;
+	color: #666666;
+}
+
+
+
+
+/********************************************************/
+/*                   11. Block arrows                   */
+/********************************************************/
+
+.block-arrow {
+	display: block;
+	width: 0;
+	height: 0;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin: 1px 0 0 -6px;
+	border: 6px solid transparent;
+	border-top-color: inherit;
+//border-top-color:expression(this.parentNode.currentStyle['border-top-color']);
+}
+.block-arrow > span {
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	margin: -7px -6px -5px -6px;
+	border: 6px solid transparent;
+	border-top-color: #e4e7eb;
+}
+.block-arrow.top {
+	top: auto;
+	left: 50%;
+	bottom: 100%;
+	margin: 0 0 1px -6px;
+	border-top-color: transparent;
+	border-bottom-color: inherit;
+//border-bottom-color:expression(this.parentNode.currentStyle['border-bottom-color']);
+}
+.block-arrow.top > span {
+	margin: -5px -6px -7px -6px;
+	border-top-color: transparent;
+	border-bottom-color: #f7f7fa;
+}
+
+.block-arrow.right {
+	top: 50%;
+	left: 100%;
+	margin: -6px 0 0 1px;
+	border-top-color: transparent;
+	border-left-color: inherit;
+//border-left-color:expression(this.parentNode.currentStyle['border-left-color']);
+}
+
+.block-arrow.left {
+	top: 50%;
+	left: auto;
+	right: 100%;
+	margin: -6px 1px 0 0;
+	border-top-color: transparent;
+	border-right-color: inherit;
+//border-right-color:expression(this.parentNode.currentStyle['border-right-color']);
+}
+.block-arrow.left > span {
+	margin: -6px -7px -6px -5px;
+	border-top-color: transparent;
+	border-right-color: #eeeff2;
+}
+
+
+
+
+/********************************************************/
+/*               14. Main layout elements               */
+/********************************************************/
+
+/* Black title bar */
+#title-bar {
+	height: 40px;
+	line-height: 38px;
+	text-align: center;
+	z-index: 3;
+	padding: 0 10px;
+}
+.fixed-title-bar > #title-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.with-shortcuts #title-bar {
+	padding-left: 43px;
+}
+.reversed.with-shortcuts #title-bar {
+	padding-left: 10px;
+	padding-right: 43px;
+}
+.with-menu #title-bar {
+	padding-right: 92px;
+}
+.reversed.with-menu #title-bar {
+	padding-right: 10px;
+	padding-left: 92px;
+}
+.reversed.with-shortcuts.with-menu #title-bar {
+	padding-right: 43px;
+	padding-left: 92px;
+}
+#title-bar h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	line-height: 36px;
+	margin: 0;
+	font-size: 16px;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-text-shadow: 0 -1px 0 black;
+	-moz-text-shadow: 0 -1px 0 black;
+	text-shadow: 0 -1px 0 black;
+}
+
+/* Menu opener icon */
+#open-menu {
+	position: absolute;
+	z-index: 4;
+	top: 5px;
+	right: 8px;
+	-webkit-tap-highlight-color: transparent;
+}
+body.reversed #open-menu {
+	left: 8px;
+	right: auto;
+}
+.fixed-title-bar > #open-menu {
+	position: fixed;
+}
+#open-menu > span {
+	padding: 0 8px 0 30px;
+	background: url(../img/menu.png) no-repeat 7px center;
+	font-size: 16px;
+	height: 27px;
+	line-height: 27px;
+}
+
+#open-menu > span,
+#open-shortcuts {
+	display: block;
+	border: 1px solid #020203;
+	color: white;
+	-webkit-text-shadow: 0 -1px 0 black;
+	-moz-text-shadow: 0 -1px 0 black;
+	text-shadow: 0 -1px 0 black;
+	background-color: #454545;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/* Shortcuts opener icon */
+#open-shortcuts {
+	position: absolute;
+	z-index: 5;
+	top: 5px;
+	left: 8px;
+	-webkit-tap-highlight-color: transparent;
+	text-align: center;
+	font-size: 24px;
+	height: 25px;
+	line-height: 25px;
+	width: 27px;
+	padding: 2px 0 0 2px;
+}
+body.reversed #open-shortcuts {
+	left: auto;
+	right: 8px;
+}
+.fixed-title-bar > #open-shortcuts {
+	position: fixed;
+}
+
+
+/* Main content */
+#main {
+	position: relative;
+	z-index: 2;
+}
+.fixed-title-bar > #main {
+	margin-top: 40px;
+}
+
+/* Title */
+#main-title {
+	color: #b3b5b8;
+	padding: 17px 20px 21px;
+	position: relative;
+}
+#main-title + .with-padding {
+	padding-top: 0 !important;
+}
+#main-title h1,
+#main-title h2 {
+	margin: 0;
+	padding: 0;
+}
+#main-title h2 {
+	position: absolute;
+	top: 17px;
+	right: 20px;
+	font-size: 22px;
+}
+#main-title h2 strong {
+	font-size: 30px;
+	vertical-align: -3px;
+}
+
+/* Side tabs shortcuts */
+#shortcuts {
+	display: none;
+	position: absolute;
+	z-index: 99;
+	top: 44px;
+	left: 10px;
+	margin: 0;
+	width: 240px;
+	list-style-type: none;
+	padding: 15px 4px 5px 14px;
+	*padding-bottom: 25px;
+	border: 1px solid white;
+	background: #d9d9d9 url(../img/bg_shortcuts.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(white), to(#d9d9d9));
+	background: -webkit-linear-gradient( white, #d9d9d9 );
+	background: -moz-linear-gradient( white, #d9d9d9 );
+	background: -ms-linear-gradient( white, #d9d9d9 );
+	background: -o-linear-gradient( white, #d9d9d9 );
+	background: linear-gradient( white, #d9d9d9 );
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 1px 7px rgba(0, 0, 0, 0.8);
+}
+.reversed #shortcuts {
+	left: auto;
+	right: 10px;
+}
+body.shortcuts-open #shortcuts {
+	display: block;
+}
+.fixed-title-bar > #shortcuts {
+	position: fixed;
+}
+#shortcuts:before {
+	display: block;
+	content: ' ';
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-bottom-color: white;
+	position: absolute;
+	bottom: 100%;
+	left: 6px;
+}
+.reversed #shortcuts:before {
+	left: auto;
+	right: 6px;
+}
+#shortcuts > li {
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin: -5px 10px 25px 0;
+}
+#shortcuts > li > a,
+#shortcuts > li > span {
+	display: block;
+	background-image: url(../img/shortcuts.png);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 5px;
+	padding-top: 65px;
+	color: #666666;
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#shortcuts > li > span {
+	color: #999999;
+}
+#shortcuts > li.current > a {
+	color: #3399cc;
+}
+.shortcut-dashboard	{ background-position: -66px -5px; }
+.shortcut-messages	{ background-position: -66px -75px; }
+.shortcut-agenda	{ background-position: -66px -145px; }
+.shortcut-contacts	{ background-position: -66px -215px; }
+.shortcut-medias	{ background-position: -66px -285px; }
+.shortcut-stats		{ background-position: -66px -355px; }
+.shortcut-settings	{ background-position: -66px -425px; }
+.shortcut-notes		{ background-position: -66px -495px; }
+
+span.shortcut-dashboard	{ background-position: 1px -5px; }
+span.shortcut-messages	{ background-position: 1px -75px; }
+span.shortcut-agenda	{ background-position: 1px -145px; }
+span.shortcut-contacts	{ background-position: 1px -215px; }
+span.shortcut-medias	{ background-position: 1px -285px; }
+span.shortcut-stats		{ background-position: 1px -355px; }
+span.shortcut-settings	{ background-position: 1px -425px; }
+span.shortcut-notes		{ background-position: 1px -495px; }
+
+
+
+
+
+
+
+
+
+/********************************************************/
+/*                     19. Messages                     */
+/********************************************************/
+
+.message, .big-message {
+	display: block;
+	position: relative;
+	border-width: 1px;
+	border-style: solid;
+	line-height: 16px;
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.message {
+	padding: 6px 8px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: black;
+}
+.message .icon {
+	margin-top: -3px;
+}
+.message.compact {
+	padding: 3px 4px;
+	font-size: 11px;
+	line-height: 12px;
+}
+.big-message {
+	padding: 16px 20px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 0.6);
+}
+.big-message strong {
+	color: black;
+	font-size: 18px;
+	font-weight: normal;
+}
+.message.silver-gradient, .big-message.silver-gradient,
+.message.white-gradient, .big-message.white-gradient {
+	-webkit-box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, 0.3);
+	color: rgba(0, 0, 0, 0.6);
+}
+.message.black-gradient, .big-message.black-gradient,
+.message.anthracite-gradient, .big-message.anthracite-gradient,
+.message.grey-gradient, .big-message.grey-gradient,
+.message.red-gradient, .big-message.red-gradient,
+.message.orange-gradient, .big-message.orange-gradient,
+.message.green-gradient, .big-message.green-gradient,
+.message.blue-gradient, .big-message.blue-gradient {
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 5px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 5px rgba(0, 0, 0, 0.4);
+	color: rgba(255, 255, 255, 0.45);
+}
+.message.black-gradient, .big-message.black-gradient strong,
+.message.anthracite-gradient, .big-message.anthracite-gradient strong,
+.message.grey-gradient, .big-message.grey-gradient strong,
+.message.red-gradient, .big-message.red-gradient strong,
+.message.orange-gradient, .big-message.orange-gradient strong,
+.message.green-gradient, .big-message.green-gradient strong,
+.message.blue-gradient, .big-message.blue-gradient strong {
+	color: white;
+}
+.big-message.black-gradient,
+.big-message.anthracite-gradient,
+.big-message.grey-gradient,
+.big-message.red-gradient,
+.big-message.orange-gradient,
+.big-message.green-gradient,
+.big-message.blue-gradient {
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.message.simpler, .big-message.simpler {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.big-message-icon {
+	float: left;
+	margin: 0 17px 0 -3px;
+	text-align: center;
+}
+.big-message-icon:before {
+	display: block;
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'EntypoRegular';
+	font-size: 80px;
+	line-height: 36px;
+	margin: 0;
+}
+.big-message-icon.with-text {
+	margin: -6px 20px -6px -6px;
+}
+.big-message-icon.with-text:before {
+	font-size: 56px;
+	line-height: 29px;
+}
+.big-message-icon.right-side {
+	float: right;
+	margin-left: 17px;
+	margin-right: -6px;
+}
+.big-message-icon.with-text.right-side {
+	margin-left: 20px;
+	margin-right: -6px;
+}

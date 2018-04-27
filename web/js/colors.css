@@ -1,0 +1,30 @@
+
+
+.blue-bg,
+.blue-gradient > .drop-down {
+	background: #0059a0;
+	color: white;
+	border-color: #004795;
+	}
+	a.blue-bg:hover {
+		background: #2b75b0;
+		color: white;
+	}
+.blue-gradient, .blue-gradient:visited,
+.blue-gradient > .select-value, .blue-gradient > .select-arrow {
+	color: white;
+	background: #00438d url(../img/old-browsers/colors/bg_blue-gradient.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#006aac), to(#00438d));
+	background: -webkit-linear-gradient(top, #006aac, #00438d);
+	background: -moz-linear-gradient(top, #006aac, #00438d);
+	background: -ms-linear-gradient(top, #006aac, #00438d);
+	background: -o-linear-gradient(top, #006aac, #00438d);
+	background: linear-gradient(top, #006aac, #00438d);
+	border-color: #004795;
+	}
+
+

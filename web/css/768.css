@@ -1,0 +1,262 @@
+
+/* 8. Main columns */
+#title-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	}
+	.with-shortcuts #title-bar {
+		padding-left: 10px;
+		}
+		.reversed.with-shortcuts #title-bar {
+			padding-right: 10px;
+			}
+			.reversed.with-shortcuts.with-menu #title-bar {
+				padding-right: 10px;
+				padding-left: 92px;
+			}
+	#title-bar ~ #main {
+		margin-top: 40px;
+	}
+	#title-bar ~ #shortcuts {
+		top: 40px;
+	}
+
+#open-shortcuts {
+	display: none;
+}
+
+#open-menu {
+	position: fixed;
+}
+
+.with-shortcuts #main {
+	margin-left: 68px;
+}
+.with-shortcuts.reversed #main {
+	margin-left: 0;
+	margin-right: 68px;
+}
+#shortcuts {
+	position: fixed;
+	display: block;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 68px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	color: white;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: auto;
+	background: #3c4044 url(../img/grid.png);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0))), #3c4044 url(../img/grid.png);
+	background: -webkit-linear-gradient( top, rgba(0,0,0,0.4), rgba(0,0,0,0)), #3c4044 url(../img/grid.png);
+	background: -moz-linear-gradient( top, rgba(0,0,0,0.4), rgba(0,0,0,0)), #3c4044 url(../img/grid.png);
+	background: -ms-linear-gradient( top, rgba(0,0,0,0.4), rgba(0,0,0,0)), #3c4044 url(../img/grid.png);
+	background: -o-linear-gradient( top, rgba(0,0,0,0.4), rgba(0,0,0,0)), #3c4044 url(../img/grid.png);
+	background: linear-gradient( top, rgba(0,0,0,0.4), rgba(0,0,0,0)), #3c4044 url(../img/grid.png);
+	-webkit-box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.75);
+	box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.75);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	}
+	body.reversed #shortcuts {
+		left: auto;
+		right: 0;
+		-webkit-box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.75);
+	}
+	#shortcuts:before {
+		display: none;
+	}
+	#shortcuts > li {
+		width: 68px;
+		height: auto;
+		float: none;
+		margin: 0;
+		overflow: hidden;
+		position: relative;
+		}
+		#shortcuts > li:first-child {
+			margin-top: -5px;
+		}
+		.no-generatedcontent #shortcuts > li:first-child {
+			margin-top: 0;
+		}
+		#shortcuts > li > a,
+		#shortcuts > li > span {
+			overflow: hidden;
+			text-indent: -3000px;
+			width: auto;
+			height: 70px;
+			padding: 0;
+		}
+		#shortcuts > li > a {
+			width: 136px;
+			-webkit-transition: margin-left 200ms;
+			-moz-transition: margin-left 200ms;
+			-o-transition: margin-left 200ms;
+			transition: margin-left 200ms;
+			position: relative;
+			}
+			body.reversed #shortcuts > li > a {
+				margin-left: -68px;
+				}
+				.no-generatedcontent body.reversed #shortcuts > li > a {
+					margin-left: -68px;
+					margin-right: -68px;
+					width: 204px;
+				}
+
+			.shortcut-dashboard,	span.shortcut-dashboard	{ background-position: 0 0; }
+			.shortcut-messages,		span.shortcut-messages	{ background-position: 0 -70px; }
+			.shortcut-agenda,		span.shortcut-agenda	{ background-position: 0 -140px; }
+			.shortcut-contacts,		span.shortcut-contacts	{ background-position: 0 -210px; }
+			.shortcut-medias,		span.shortcut-medias	{ background-position: 0 -280px; }
+			.shortcut-stats,		span.shortcut-stats		{ background-position: 0 -350px; }
+			.shortcut-settings,		span.shortcut-settings	{ background-position: 0 -420px; }
+			.shortcut-notes,		span.shortcut-notes		{ background-position: 0 -490px; }
+
+				body.reversed a.shortcut-dashboard	{ background-position: 68px 0; }
+				body.reversed a.shortcut-messages	{ background-position: 68px -70px; }
+				body.reversed a.shortcut-agenda		{ background-position: 68px -140px; }
+				body.reversed a.shortcut-contacts	{ background-position: 68px -210px; }
+				body.reversed a.shortcut-medias		{ background-position: 68px -280px; }
+				body.reversed a.shortcut-stats		{ background-position: 68px -350px; }
+				body.reversed a.shortcut-settings	{ background-position: 68px -420px; }
+				body.reversed a.shortcut-notes		{ background-position: 68px -490px; }
+
+			#shortcuts > li > a:before,
+			#shortcuts > li:after {
+				display: block;
+				content: ' ';
+				position: absolute;
+				top: 5px;
+				bottom: 5px;
+				}
+				#shortcuts > li > a:before {
+					background-color: white;
+					background-image: url(../img/shortcuts.png);
+					right: 0;
+					width: 64px;
+					-webkit-border-radius: 7px 0 0 7px;
+					-moz-border-radius: 7px 0 0 7px;
+					border-radius: 7px 0 0 7px;
+					}
+					body.reversed #shortcuts > li > a:before {
+						left: 0;
+						right: auto;
+						-webkit-border-radius: 0 7px 7px 0;
+						-moz-border-radius: 0 7px 7px 0;
+						border-radius: 0 7px 7px 0;
+					}
+
+					a.shortcut-dashboard:before	{ background-position: -70px -5px; }
+					a.shortcut-messages:before	{ background-position: -70px -75px; }
+					a.shortcut-agenda:before	{ background-position: -70px -145px; }
+					a.shortcut-contacts:before	{ background-position: -70px -215px; }
+					a.shortcut-medias:before	{ background-position: -70px -285px; }
+					a.shortcut-stats:before		{ background-position: -70px -355px; }
+					a.shortcut-settings:before	{ background-position: -70px -425px; }
+					a.shortcut-notes:before		{ background-position: -70px -495px; }
+
+				#shortcuts > li:after {
+					right: 0;
+					width: 6px;
+					opacity: 0;
+					-webkit-transition-delay: 200ms;
+					-moz-transition-delay: 200ms;
+					-o-transition-delay: 200ms;
+					transition-delay: 200ms;
+					-webkit-transition: opacity 200ms;
+					-moz-transition: opacity 200ms;
+					-o-transition: opacity 200ms;
+					transition: opacity 200ms;
+					pointer-events: none;
+					background: url(../img/bg_shortcuts_li_after.png) repeat-y;
+					-webkit-background-size: 100% 100%;
+					-moz-background-size: 100% 100%;
+					-o-background-size: 100% 100%;
+					background-size: 100% 100%;
+					background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75)), color-stop(0.5, rgba(0, 0, 0, 0.2)), color-stop(0.75, rgba(0, 0, 0, 0.3)), color-stop(0.9, rgba(0, 0, 0, 0.5)));
+					background: -webkit-linear-gradient( left, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					background: -moz-linear-gradient( left, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					background: -ms-linear-gradient( left, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					background: -o-linear-gradient( left, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					background: linear-gradient( left, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					}
+					body.reversed #shortcuts > li:after {
+						left: 0;
+						right: auto;
+						background: url(../img/bg_body_reversed_shortcuts_li_after.png) repeat-y right top;
+						-webkit-background-size: 100% 100%;
+						-moz-background-size: 100% 100%;
+						-o-background-size: 100% 100%;
+						background-size: 100% 100%;
+						background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75)), color-stop(0.5, rgba(0, 0, 0, 0.2)), color-stop(0.75, rgba(0, 0, 0, 0.3)), color-stop(0.9, rgba(0, 0, 0, 0.5)));
+						background: -webkit-linear-gradient( right, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+						background: -moz-linear-gradient( right, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+						background: -ms-linear-gradient( right, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+						background: -o-linear-gradient( right, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+						background: linear-gradient( right, rgba(0,0,0,0), rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.75));
+					}
+					#shortcuts > li.current:after {
+						display: none;
+					}
+					.no-touch #shortcuts > li:hover:after {
+						opacity: 1;
+						-webkit-transition: none;
+						-moz-transition: none;
+						-o-transition: none;
+						transition: none;
+					}
+
+			.no-touch #shortcuts > li > a:hover,
+			#shortcuts > li.current > a,
+			.no-touch #shortcuts:hover > li.current:hover > a {
+				margin-left: -68px;
+				}
+				.no-generatedcontent #shortcuts > li.current > a {
+					background-color: white;
+				}
+				.no-touch body.reversed #shortcuts > li > a:hover,
+				body.reversed #shortcuts > li.current > a,
+				.no-touch body.reversed #shortcuts:hover > li.current:hover > a {
+					margin-left: 0;
+					margin-right: -68px;
+					}
+					.no-generatedcontent body.reversed #shortcuts > li.current > a,
+					.no-generatedcontent body.reversed #shortcuts > li > a:hover {
+						margin-left: -136px;
+						margin-right: 0;
+					}
+
+				.no-touch #shortcuts:hover > li.current > a {
+					margin-left: -60px;
+					}
+					.no-touch.no-generatedcontent #shortcuts:hover > li.current > a {
+						margin-left: -68px;
+					}
+					.no-touch body.reversed #shortcuts:hover > li.current > a {
+						margin-left: -8px;
+						margin-right: -60px;
+						}
+						.no-touch.no-generatedcontent body.reversed #shortcuts:hover > li.current > a {
+							margin-left: -136px;
+							margin-right: 0;
+						}
+
+			#shortcuts > li.at-bottom {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}

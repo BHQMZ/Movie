@@ -1,0 +1,104 @@
+
+
+.blue-bg,
+.blue-gradient > .drop-down {
+	background: #0059a0;
+	color: white;
+	border-color: #004795;
+}
+a.blue-bg:hover {
+	background: #2b75b0;
+	color: white;
+}
+.blue-gradient, .blue-gradient:visited,
+.blue-gradient > .select-value, .blue-gradient > .select-arrow {
+	color: white;
+	background: #00438d url(../img/bg_blue-gradient.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#006aac), to(#00438d));
+	background: -webkit-linear-gradient(top, #006aac, #00438d);
+	background: -moz-linear-gradient(top, #006aac, #00438d);
+	background: -ms-linear-gradient(top, #006aac, #00438d);
+	background: -o-linear-gradient(top, #006aac, #00438d);
+	background: linear-gradient(top, #006aac, #00438d);
+	border-color: #004795;
+}
+/********************************************************/
+/*            6. Generic gradients - defaults           */
+/********************************************************/
+
+/* Black */
+#title-bar, #access {
+	background: #000000 url(../img/bg_tr_highlight_glossy_th.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5e5e5e), to(black), color-stop(0.04, #4f4f4f), color-stop(0.44, #262626), color-stop(0.5, #1c1c1c), color-stop(0.5, #050505));
+	background: -webkit-linear-gradient(top, #5e5e5e, #4f4f4f 4%, #262626 44%, #1c1c1c 50%, #050505 50%, black);
+	background: -moz-linear-gradient(top, #5e5e5e, #4f4f4f 4%, #262626 44%, #1c1c1c 50%, #050505 50%, black);
+	background: -ms-linear-gradient(top, #5e5e5e, #4f4f4f 4%, #262626 44%, #1c1c1c 50%, #050505 50%, black);
+	background: -o-linear-gradient(top, #5e5e5e, #4f4f4f 4%, #262626 44%, #1c1c1c 50%, #050505 50%, black);
+	background: linear-gradient(top, #5e5e5e, #4f4f4f 4%, #262626 44%, #1c1c1c 50%, #050505 50%, black);
+}
+
+/* Anthracite */
+.black-inputs .switch-button,
+.black-input > .switch-button,
+.radio > .check-knob,
+.wizard-steps {
+	color: white;
+	background: #404040 url(../img/bg_black-inputs_switch-button.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#565656), to(#404040));
+	background: -webkit-linear-gradient(top, #565656, #404040);
+	background: -moz-linear-gradient(top, #565656, #404040);
+	background: -ms-linear-gradient(top, #565656, #404040);
+	background: -o-linear-gradient(top, #565656, #404040);
+	background: linear-gradient(top, #565656, #404040);
+	border-color: #282e36;
+}
+
+/* White */
+.calendar-menu > li,
+li.calendar-menu,
+.message-menu > li,
+li.message-menu,
+.message, .big-message,
+.table > thead > tr > .header:hover {
+	color: #666666;
+	background: #e4e7eb url(../img/bg_message.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f7f7fa), to(#e4e7eb));
+	background: -webkit-linear-gradient(top, #f7f7fa, #e4e7eb);
+	background: -moz-linear-gradient(top, #f7f7fa, #e4e7eb);
+	background: -ms-linear-gradient(top, #f7f7fa, #e4e7eb);
+	background: -o-linear-gradient(top, #f7f7fa, #e4e7eb);
+	background: linear-gradient(top, #f7f7fa, #e4e7eb);
+	border-color: #cccccc;
+	}
+	.message.glossy, .big-message.glossy {
+		background: #e8e8eb url(../img/bg_message_glossy.png) repeat-x;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		background-size: 100% 100%;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fafafc), to(#e8e8eb), color-stop(0.5, #ededf0), color-stop(0.5, #e3e3e5));
+		background: -webkit-linear-gradient(top, #fafafc, #ededf0 50%, #e3e3e5 50%, #e8e8eb);
+		background: -moz-linear-gradient(top, #fafafc, #ededf0 50%, #e3e3e5 50%, #e8e8eb);
+		background: -ms-linear-gradient(top, #fafafc, #ededf0 50%, #e3e3e5 50%, #e8e8eb);
+		background: -o-linear-gradient(top, #fafafc, #ededf0 50%, #e3e3e5 50%, #e8e8eb);
+		background: linear-gradient(top, #fafafc, #ededf0 50%, #e3e3e5 50%, #e8e8eb);
+	}
+
+
+
